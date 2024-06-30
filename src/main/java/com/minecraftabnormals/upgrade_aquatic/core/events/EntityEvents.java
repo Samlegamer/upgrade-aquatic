@@ -156,7 +156,11 @@ public class EntityEvents {
 	@SubscribeEvent
 	public static void onPlayerSleep(PlayerSleepInBedEvent event) {
 		PlayerEntity player = event.getPlayer();
-		BlockState state = player.getCommandSenderWorld().getBlockState(event.getPos());
+		BlockPos pos = event.getPos();
+		if (pos == null) return;
+
+		BlockState state = player.getCommandSenderWorld().getBlockState(pos);
+
 		if (event.getResultStatus() == null && state.getFluidState().getAmount() == 8 && state.getBlock() instanceof BedrollBlock) {
 			if (player instanceof ServerPlayerEntity && player.isAlive()) {
 				ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
