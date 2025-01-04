@@ -25,22 +25,22 @@ public enum PikeType {
 	BROWN_NORTHERN(3, PikeSize.LARGE, PikeRarity.COMMON, 8, null),
 	MAHOGANY_NORTHERN(4, PikeSize.LARGE, PikeRarity.UNCOMMON, 9, null),
 	JADE_NORTHERN(5, PikeSize.LARGE, PikeRarity.RARE, 10, null),
-	OLIVE_NORTHERN(6, PikeSize.LARGE, PikeRarity.SUPER_RARE, 11, null),
+	OLIVE_NORTHERN(6, PikeSize.LARGE, PikeRarity.EPIC, 11, null),
 	SPECTRAL(7, PikeSize.LARGE, PikeRarity.LEGENDARY, null, null),
 	SPOTTED_BROWN_NORTHERN(8, PikeSize.LARGE, PikeRarity.COMMON, null, null),
 	SPOTTED_MAHOGANY_NORTHERN(9, PikeSize.LARGE, PikeRarity.UNCOMMON, null, null),
 	SPOTTED_JADE_NORTHERN(10, PikeSize.LARGE, PikeRarity.RARE, null, null),
-	SPOTTED_OLIVE_NORTHERN(11, PikeSize.LARGE, PikeRarity.SUPER_RARE, null, null),
+	SPOTTED_OLIVE_NORTHERN(11, PikeSize.LARGE, PikeRarity.EPIC, null, null),
 	SUPERCHARGED(12, PikeSize.LARGE, PikeRarity.LEGENDARY, null, null),
 	OBSIDIAN(13, PikeSize.LARGE, PikeRarity.LEGENDARY, null, null),
-	MUSKELLUNGE(14, PikeSize.HUGE, PikeRarity.SUPER_RARE, null, BiomeTags.IS_RIVER),
+	MUSKELLUNGE(14, PikeSize.HUGE, PikeRarity.EPIC, null, BiomeTags.IS_RIVER),
 	CHAIN_PICKEREL(15, PikeSize.SMALL, PikeRarity.COMMON, null, BiomeTags.IS_RIVER),
 	GRASS_PICKEREL(16, PikeSize.SMALL, PikeRarity.COMMON, null, Tags.Biomes.IS_SWAMP),
 	BLACK_SOUTHERN(17, PikeSize.MEDIUM, PikeRarity.COMMON, null, null),
 	EBONY_SOUTHERN(18, PikeSize.MEDIUM, PikeRarity.UNCOMMON, null, null),
 	MUSTARD_SOUTHERN(19, PikeSize.MEDIUM, PikeRarity.RARE, null, null),
 	LEMON_SOUTHERN(20, PikeSize.MEDIUM, PikeRarity.RARE, null, null),
-	GOLDEN_SOUTHERN(21, PikeSize.MEDIUM, PikeRarity.SUPER_RARE, null, null);
+	GOLDEN_SOUTHERN(21, PikeSize.MEDIUM, PikeRarity.EPIC, null, null);
 
 	public final int id;
 	public final PikeSize pikeSize;
@@ -106,8 +106,8 @@ public enum PikeType {
 		COMMON(ChatFormatting.GRAY, 55),
 		UNCOMMON(ChatFormatting.GREEN, 25),
 		RARE(ChatFormatting.BLUE, 15),
-		SUPER_RARE(ChatFormatting.GOLD, 5),
-		LEGENDARY(ChatFormatting.LIGHT_PURPLE, 1);
+		EPIC(ChatFormatting.LIGHT_PURPLE, 5),
+		LEGENDARY(ChatFormatting.GOLD, 1);
 
 		public final ChatFormatting formatting;
 		private final Weight weight;
