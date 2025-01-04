@@ -1,0 +1,34 @@
+{
+  "molding": "json",
+  "remolder": {
+    "type": "replace",
+    "target": "overrides",
+    "value": [
+      {
+        "predicate": {
+          "variant": 1
+        },
+        "model": "upgrade_aquatic:item/axolotl_bucket_wild"
+      },
+      {
+        "predicate": {
+          "variant": 2
+        },
+        "model": "upgrade_aquatic:item/axolotl_bucket_gold"
+      },
+      {
+        "predicate": {
+          "variant": 3
+        },
+        "model": "upgrade_aquatic:item/axolotl_bucket_cyan"
+      },
+      {
+        "predicate": {
+          "variant": 4
+        },
+        "model": "upgrade_aquatic:item/axolotl_bucket_blue"
+      }
+    ]
+  },
+  "selector": "minecraft:models/item/axolotl_bucket"
+}
