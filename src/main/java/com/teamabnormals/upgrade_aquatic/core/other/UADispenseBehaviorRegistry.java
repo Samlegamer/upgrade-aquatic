@@ -14,6 +14,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.GlowSquid;
 import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Bucketable;
 import net.minecraft.world.entity.animal.Squid;
@@ -61,7 +62,7 @@ public class UADispenseBehaviorRegistry {
 						return bucket;
 					}
 					if (mob instanceof Squid) {
-						ItemStack bucket = new ItemStack(UAItems.SQUID_BUCKET.get());
+						ItemStack bucket = new ItemStack(mob instanceof GlowSquid ? UAItems.GLOW_SQUID_BUCKET.get() : UAItems.SQUID_BUCKET.get());
 						if (mob.hasCustomName()) {
 							bucket.setHoverName(mob.getCustomName());
 						}
