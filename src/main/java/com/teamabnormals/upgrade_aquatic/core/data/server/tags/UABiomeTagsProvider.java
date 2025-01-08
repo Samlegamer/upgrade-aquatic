@@ -41,10 +41,11 @@ public class UABiomeTagsProvider extends BiomeTagsProvider {
 		this.tag(UABiomeTags.HAS_EXTRA_PICKERELWEED).add(Biomes.FLOWER_FOREST);
 		this.tag(UABiomeTags.HAS_AMMONITE_ORE).addTag(BiomeTags.IS_BEACH).addTag(BiomeTags.IS_OCEAN).add(Biomes.STONY_SHORE);
 		this.tag(UABiomeTags.HAS_PRISMARINE_CORAL).addTag(BiomeTags.IS_OCEAN);
+		this.tag(UABiomeTags.HAS_RIVER_TREE).addTag(BiomeTags.IS_RIVER);
 
 		this.tag(UABiomeTags.HAS_DRIFTWOOD).addTag(BiomeTags.IS_OCEAN);
 		this.tag(UABiomeTags.HAS_BEACH_DRIFTWOOD).addTag(BiomeTags.IS_BEACH);
-		this.tag(UABiomeTags.HAS_RIVER_TREE).addTag(BiomeTags.IS_RIVER);
+		this.tag(UABiomeTags.HAS_RIVER_DRIFTWOOD).addTag(BiomeTags.IS_RIVER);
 		this.tag(UABiomeTags.HAS_SWAMP_DRIFTWOOD).addTag(Tags.Biomes.IS_SWAMP);
 		this.tag(UABiomeTags.HAS_EXTRA_DRIFTWOOD).addOptional(new ResourceLocation("atmospheric", "rainforest_basin")).addOptional(new ResourceLocation("atmospheric", "sparse_rainforest_basin"));
 
