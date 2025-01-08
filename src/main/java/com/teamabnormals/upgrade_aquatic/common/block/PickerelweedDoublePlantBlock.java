@@ -50,8 +50,10 @@ public class PickerelweedDoublePlantBlock extends Block implements BonemealableB
 		this.registerDefaultState(this.stateDefinition.any().setValue(HALF, DoubleBlockHalf.LOWER).setValue(FAKE_WATERLOGGED, false));
 	}
 
-	public VoxelShape getShape(BlockState p_220053_1_, BlockGetter p_220053_2_, BlockPos p_220053_3_, CollisionContext p_220053_4_) {
-		return SHAPE;
+	@Override
+	public VoxelShape getShape(BlockState p_53517_, BlockGetter p_53518_, BlockPos p_53519_, CollisionContext p_53520_) {
+		Vec3 vec3 = p_53517_.getOffset(p_53518_, p_53519_);
+		return SHAPE.move(vec3.x, vec3.y, vec3.z);
 	}
 
 	@Override
