@@ -103,7 +103,7 @@ public class UAFeatures {
 
 		public static void bootstrap(BootstapContext<PlacedFeature> context) {
 			register(context, ORE_AMMONITE, UAConfiguredFeatures.ORE_AMMONITE, commonOrePlacement(30, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(73))));
-			register(context, BEACHGRASS_DUNES, UAConfiguredFeatures.BEACHGRASS_DUNES, VegetationPlacements.worldSurfaceSquaredWithCount(12));
+			register(context, BEACHGRASS_DUNES, UAConfiguredFeatures.BEACHGRASS_DUNES, VegetationPlacements.worldSurfaceSquaredWithCount(10));
 			register(context, RIVER_TREE, UAConfiguredFeatures.RIVER_TREE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.5F, 2)));
 			register(context, PRISMARINE_CORAL, UAConfiguredFeatures.PRISMARINE_CORAL, CarvingMaskPlacement.forStep(Carving.AIR), RarityFilter.onAverageOnceEvery(256), BiomeFilter.biome());
 
@@ -113,8 +113,8 @@ public class UAFeatures {
 			register(context, PATCH_FLOWERING_RUSH, UAConfiguredFeatures.PATCH_FLOWERING_RUSH, RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
 			register(context, DRIFTWOOD_OCEAN, UAConfiguredFeatures.DRIFTWOOD, RarityFilter.onAverageOnceEvery(36), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-			register(context, DRIFTWOOD_BEACH, UAConfiguredFeatures.DRIFTWOOD, RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-			register(context, DRIFTWOOD_RIVER, UAConfiguredFeatures.DRIFTWOOD, VegetationPlacements.worldSurfaceSquaredWithCount(3));
+			register(context, DRIFTWOOD_BEACH, UAConfiguredFeatures.DRIFTWOOD, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+			register(context, DRIFTWOOD_RIVER, UAConfiguredFeatures.DRIFTWOOD, VegetationPlacements.worldSurfaceSquaredWithCount(6));
 			register(context, DRIFTWOOD_SWAMP, UAConfiguredFeatures.DRIFTWOOD, VegetationPlacements.worldSurfaceSquaredWithCount(4));
 			register(context, DRIFTWOOD_EXTRA, UAConfiguredFeatures.DRIFTWOOD, VegetationPlacements.worldSurfaceSquaredWithCount(5));
 		}
