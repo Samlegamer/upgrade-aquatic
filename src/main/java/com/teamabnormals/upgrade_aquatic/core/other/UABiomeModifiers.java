@@ -52,7 +52,7 @@ public class UABiomeModifiers {
 		addSpawn(context, "thrasher", UABiomeTags.HAS_THRASHER, new MobSpawnSettings.SpawnerData(UAEntityTypes.THRASHER.get(), 10, 1, 2));
 		addSpawn(context, "nautilus", UABiomeTags.HAS_NAUTILUS, new MobSpawnSettings.SpawnerData(UAEntityTypes.NAUTILUS.get(), 50, 1, 4));
 		addSpawn(context, "lionfish", UABiomeTags.HAS_LIONFISH, new MobSpawnSettings.SpawnerData(UAEntityTypes.LIONFISH.get(), 15, 1, 1));
-		addSpawn(context, "pike", UABiomeTags.HAS_PIKE, new MobSpawnSettings.SpawnerData(UAEntityTypes.PIKE.get(), 15, 1, 3));
+		addSpawn(context, "pike", UABiomeTags.HAS_PIKE, new MobSpawnSettings.SpawnerData(UAEntityTypes.PIKE.get(), 20, 1, 3));
 		addSpawn(context, "squid", UABiomeTags.HAS_SQUID, new MobSpawnSettings.SpawnerData(EntityType.SQUID, 2, 1, 4));
 		addSpawn(context, "perch", UABiomeTags.HAS_PERCH, new MobSpawnSettings.SpawnerData(UAEntityTypes.PERCH.get(), 5, 1, 6));
 	}
