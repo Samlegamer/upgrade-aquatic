@@ -1,6 +1,8 @@
 package com.teamabnormals.upgrade_aquatic.core;
 
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import com.teamabnormals.gallery.core.data.client.GalleryAssetsRemolderProvider;
+import com.teamabnormals.gallery.core.data.client.GalleryItemModelProvider;
 import com.teamabnormals.upgrade_aquatic.client.GlowSquidSpriteUploader;
 import com.teamabnormals.upgrade_aquatic.client.model.*;
 import com.teamabnormals.upgrade_aquatic.client.model.jellyfish.BoxJellyfishModel;
@@ -121,6 +123,9 @@ public class UpgradeAquatic {
 		boolean client = event.includeClient();
 		generator.addProvider(client, new UABlockStateProvider(output, helper));
 		generator.addProvider(client, new UASpriteSourceProvider(output, helper));
+
+		generator.addProvider(client, new GalleryItemModelProvider(MOD_ID, output, helper));
+		generator.addProvider(client, new GalleryAssetsRemolderProvider(MOD_ID, output, provider));
 	}
 
 	private void clientSetup(FMLClientSetupEvent event) {
