@@ -11,6 +11,7 @@ import com.teamabnormals.upgrade_aquatic.common.entity.ai.goal.pike.PikeAttackGo
 import com.teamabnormals.upgrade_aquatic.common.entity.ai.goal.pike.PikeSwimToItemsGoal;
 import com.teamabnormals.upgrade_aquatic.common.entity.ai.goal.pike.PikeTemptGoal;
 import com.teamabnormals.upgrade_aquatic.core.other.UADataSerializers;
+import com.teamabnormals.upgrade_aquatic.core.other.tags.UABlockTags;
 import com.teamabnormals.upgrade_aquatic.core.registry.UAItems;
 import com.teamabnormals.upgrade_aquatic.core.registry.UAParticleTypes;
 import com.teamabnormals.upgrade_aquatic.core.registry.UASoundEvents;
@@ -42,10 +43,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
-import net.minecraft.world.entity.animal.AbstractFish;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Bucketable;
-import net.minecraft.world.entity.animal.Turtle;
+import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -317,24 +315,9 @@ public class Pike extends BucketableWaterAnimal {
 		return spawnDataIn;
 	}
 
-	public static boolean checkPikeSpawnRules(EntityType<? extends Pike> entityType, LevelAccessor world, MobSpawnType spawnReason, BlockPos pos, RandomSource random) {
-		int vertRadius = 2;
-		int horizRadius = 3;
-
-		int count = 0;
-		for (int y = pos.getY() - vertRadius; y <= pos.getY() + vertRadius; y++) {
-			for (int x = pos.getX() - horizRadius; x <= pos.getX() + horizRadius; x++) {
-				for (int z = pos.getZ() - horizRadius; z <= pos.getZ() + horizRadius; z++) {
-					BlockState state = world.getBlockState(new BlockPos(x, y, z));
-					if (state.getBlock() instanceof PickerelweedPlantBlock || state.getBlock() instanceof PickerelweedDoublePlantBlock) {
-						count++;
-					}
-				}
-			}
-		}
-
-		int i = world.getSeaLevel();
-		return random.nextFloat() < (0.05F * count) && pos.getY() >= i - 13 && pos.getY() <= i;
+	public static boolean checkPikeSpawnRules(EntityType<? extends Pike> entityType, LevelAccessor level, MobSpawnType spawnReason, BlockPos pos, RandomSource random) {
+		int count = BlockPos.betweenClosedStream(pos.offset(-4, -6, -4), pos.offset(4, 3, 4)).filter(offsetPos -> level.getBlockState(offsetPos).is(UABlockTags.PIKE_SPAWNERS)).toList().size();
+		return random.nextFloat() < (0.05F * count) && WaterAnimal.checkSurfaceWaterAnimalSpawnRules(entityType, level, spawnReason, pos, random);
 	}
 
 	@Override

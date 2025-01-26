@@ -1,6 +1,7 @@
 package com.teamabnormals.upgrade_aquatic.common.block;
 
 import com.teamabnormals.upgrade_aquatic.common.entity.animal.Pike;
+import com.teamabnormals.upgrade_aquatic.core.other.tags.UABlockTags;
 import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -69,8 +70,7 @@ public class PickerelweedDoublePlantBlock extends Block implements BonemealableB
 	}
 
 	protected boolean isValidGround(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		Block block = state.getBlock();
-		return block == Blocks.GRASS_BLOCK || block == Blocks.DIRT || block == Blocks.COARSE_DIRT || block == Blocks.PODZOL || block == Blocks.CLAY;
+		return state.is(UABlockTags.PICKERELWEED_PLACEABLE);
 	}
 
 	@SuppressWarnings("deprecation")

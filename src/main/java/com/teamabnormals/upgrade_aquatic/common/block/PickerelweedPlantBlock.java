@@ -1,6 +1,7 @@
 package com.teamabnormals.upgrade_aquatic.common.block;
 
 import com.teamabnormals.upgrade_aquatic.common.entity.animal.Pike;
+import com.teamabnormals.upgrade_aquatic.core.other.tags.UABlockTags;
 import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -63,9 +64,9 @@ public class PickerelweedPlantBlock extends Block implements BonemealableBlock, 
 
 	@Override
 	public void performBonemeal(ServerLevel world, RandomSource rand, BlockPos pos, BlockState state) {
-		FluidState ifluidstate = world.getFluidState(pos.above());
+		BlockState aboveState = world.getBlockState(pos.above());
 		PickerelweedDoublePlantBlock doubleplantblock = (PickerelweedDoublePlantBlock) UABlocks.TALL_PICKERELWEED.get();
-		if (doubleplantblock.defaultBlockState().canSurvive(world, pos) && (world.isEmptyBlock(pos.above()) || ifluidstate.is(FluidTags.WATER) && ifluidstate.getAmount() >= 6)) {
+		if (doubleplantblock.defaultBlockState().canSurvive(world, pos) && (aboveState.isAir() || aboveState.is(Blocks.WATER))) {
 			doubleplantblock.placeAt(world, pos, 2);
 		}
 	}
@@ -76,8 +77,7 @@ public class PickerelweedPlantBlock extends Block implements BonemealableBlock, 
 	}
 
 	protected boolean isValidGround(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		Block block = state.getBlock();
-		return block == Blocks.GRASS_BLOCK || block == Blocks.DIRT || block == Blocks.COARSE_DIRT || block == Blocks.PODZOL || block == Blocks.CLAY;
+		return state.is(UABlockTags.PICKERELWEED_PLACEABLE);
 	}
 
 	@Nullable
