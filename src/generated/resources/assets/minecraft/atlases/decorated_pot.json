@@ -2,17 +2,17 @@
   "sources": [
     {
       "type": "blueprint:paletted_permutations",
+      "palette_key": "clayworks:entity/decorated_pot_trim_palettes/trim_palette",
+      "permutations": {
+        "upgrade_aquatic_tooth": "upgrade_aquatic:entity/decorated_pot_trim_palettes/tooth"
+      },
       "sources": [
         {
           "type": "minecraft:directory",
           "prefix": "entity/decorated_pot_trim_patterns/",
           "source": "entity/decorated_pot_trim_patterns"
         }
-      ],
-      "palette_key": "clayworks:entity/decorated_pot_trim_palettes/trim_palette",
-      "permutations": {
-        "upgrade_aquatic_tooth": "upgrade_aquatic:entity/decorated_pot_trim_palettes/tooth"
-      }
+      ]
     }
   ]
 }
